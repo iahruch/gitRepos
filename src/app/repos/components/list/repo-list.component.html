@@ -1,0 +1,32 @@
+<table mat-table [dataSource]="repos" class="table">
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef > No </th>
+    <td mat-cell *matCellDef="let index = index"> {{index+1}}  </td>
+  </ng-container>
+
+  <ng-container matColumnDef="repo" >
+    <th mat-header-cell *matHeaderCellDef > Repo </th>
+    <td mat-cell *matCellDef="let element" [moreInfoTooltip]="element"> {{element.full_name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="starts">
+    <th mat-header-cell *matHeaderCellDef> Starts </th>
+    <td mat-cell *matCellDef="let element"> {{element.stargazers_count}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="fav">
+    <th mat-header-cell *matHeaderCellDef> Fav </th>
+    <td mat-cell *matCellDef="let element">
+      <r-add-favorites
+        [id]="element.id"
+        [fullName]="element.full_name"
+        [ownerPhoto]="element.owner.avatar_url"
+        [starsCount]="element.stargazers_count"
+        [descRepo]="element.description"
+      ></r-add-favorites>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="foo" ></tr>
+</table>

@@ -1,0 +1,29 @@
+
+.inner_wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 64px);
+  overflow: auto;
+  .left, .right {
+    flex: 0 1 50%;
+  }
+  .content {
+    height: 100%;
+
+  }
+}
+.loading {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mat-progress-bar {
+    width: 80%;
+  }
+}.form-group {
+  width: 100%;
+}
+
+
+

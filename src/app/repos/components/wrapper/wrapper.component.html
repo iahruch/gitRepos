@@ -1,0 +1,19 @@
+<div class="inner_wrapper">
+  <div class="left">
+    <div>
+      <form [formGroup]="form" (keyup.enter)="search()">
+      <mat-form-field appearance="outline" class="form-group">
+        <mat-label>Search some repo...</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="search">
+
+        <mat-error *ngIf="form.get('search').errors">
+          Min length must be 3 symbol
+        </mat-error>
+      </mat-form-field>
+    </form>
+   </div>
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="right"></div>
+</div>

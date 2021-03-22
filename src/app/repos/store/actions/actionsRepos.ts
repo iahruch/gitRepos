@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store'
-import { ActionReposTypes as ActionTypes } from './actionTypes'
-import { ResponseReposInterface } from '../types/responseRepos.interface'
+import { ActionReposTypes as ActionTypes } from '../actionTypes'
+import { ResponseReposInterface } from '../../types/responseRepos.interface'
 
 export const getReposAction = createAction(
   ActionTypes.GET_REPOS,

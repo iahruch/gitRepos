@@ -1,7 +1,6 @@
-import {createFeatureSelector, createSelector} from '@ngrx/store'
-import { ReposStateInterface} from "../types/reposState.interface";
+import { createFeatureSelector, createSelector } from '@ngrx/store'
+import { ReposStateInterface } from '../types/reposState.interface'
 import { AppStateInterface } from './../../shared/types/appState.interface'
-
 
 export const reposFeatureSelector = createFeatureSelector<
   AppStateInterface,
@@ -19,4 +18,14 @@ export const reposSelector = createSelector(
 export const errorsSelector = createSelector(
   reposFeatureSelector,
   (state: ReposStateInterface) => state.errors
+)
+
+export const searchSelector = createSelector(
+  reposFeatureSelector,
+  (state: ReposStateInterface) => state.searchItems
+)
+
+export const strSearchSelector = createSelector(
+  reposFeatureSelector,
+  (state: ReposStateInterface) => state.strSearch
 )

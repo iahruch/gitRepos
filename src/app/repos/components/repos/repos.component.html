@@ -1,0 +1,27 @@
+
+<!--<div class="inner_wrapper">-->
+<!--   <div class="left">-->
+<!--      <div>-->
+<!--        <h1>Search field</h1>-->
+<!--      </div>-->
+     <cdk-virtual-scroll-viewport #scroller itemSize="72" class="content">
+
+       <r-repo-list [repos]="(repos$ | async)"></r-repo-list>
+
+       <div class="loading">
+         <mat-progress-bar mode="buffer"  *ngIf="true"></mat-progress-bar>
+       </div>
+
+     </cdk-virtual-scroll-viewport>
+<!--   </div>-->
+
+<!--   <div class="right">-->
+<!--   </div>-->
+
+<!-- </div>-->
+
+
+
+
+
+

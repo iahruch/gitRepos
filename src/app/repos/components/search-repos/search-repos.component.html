@@ -1,0 +1,8 @@
+<cdk-virtual-scroll-viewport #scroller itemSize="72" class="content">
+
+  <r-repo-list [repos]="(search$ | async)"></r-repo-list>
+
+  <div class="loading">
+    <mat-progress-bar mode="buffer"  *ngIf="true"></mat-progress-bar>
+  </div>
+</cdk-virtual-scroll-viewport>

@@ -5,16 +5,17 @@ import {
   ViewChild,
   NgZone,
 } from '@angular/core'
-import { ReposService } from '../services/repos.service'
+import { ReposService } from '../../services/repos.service'
 import { select, Store } from '@ngrx/store'
-import { getReposAction } from '../store/actionsRepos'
+import { getReposAction } from '../../store/actions/actionsRepos'
 import { Observable } from 'rxjs'
-import { RepoInterface } from '../types/repo.interface'
+import { RepoInterface } from '../../types/repo.interface'
 import {
   errorsSelector,
   isLoadingSelector,
   reposSelector,
-} from '../store/selectors'
+} from '../../store/selectors'
+
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling'
 import { filter, map, pairwise, throttleTime } from 'rxjs/operators'
 
@@ -27,8 +28,7 @@ export class ReposComponent implements OnInit, AfterViewInit {
   isLoading$: Observable<boolean>
   repos$: Observable<RepoInterface[]>
   errors$: Observable<any>
-  displayedColumns: string[] = ['position', 'repo', 'starts', 'fav']
-
+  page = 1
   @ViewChild('scroller') scroller: CdkVirtualScrollViewport
 
   constructor(
@@ -38,7 +38,7 @@ export class ReposComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    this.store.dispatch(getReposAction({ page: 1 }))
+    this.store.dispatch(getReposAction({ page: this.page }))
     this.initValues()
   }
 
@@ -53,7 +53,7 @@ export class ReposComponent implements OnInit, AfterViewInit {
       )
       .subscribe(() => {
         this.ngZone.run(() => {
-          this.store.dispatch(getReposAction({ page: 2 }))
+          this.store.dispatch(getReposAction({ page: ++this.page }))
         })
       })
   }

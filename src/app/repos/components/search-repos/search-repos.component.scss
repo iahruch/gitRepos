@@ -1,0 +1,25 @@
+.loading {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mat-progress-bar {
+    width: 80%;
+  }
+}
+
+.table {
+  width: 100%;
+  min-width: 100%;
+  td {
+    vertical-align: baseline;
+  }
+}
+
+.foo {
+  cursor: pointer;
+}
+
+.cdk-virtual-scroll-viewport {
+  height: calc(100vh - 200px)
+}

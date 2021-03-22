@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { select, Store } from '@ngrx/store'
 import { getFavoritesSelector } from '../../store/selectors'
-import { addToFavoritesAction } from '../../store/actions'
+import { removeToFavoritesAction } from '../../store/actions'
 
 @Component({
   selector: 'r-favorites',
@@ -20,16 +20,10 @@ export class FavoritesComponent implements OnInit {
   }
 
   removeFroFavorites(favElement: any) {
-    // const data = {
-    //   fullName: this.fullNameProps,
-    //   ownerPhoto: this.ownerPhotoProps,
-    //   starsCount: this.starsCountProps,
-    //   descRepo: this.descRepoProps,
-    // }
-    // const fav = {
-    //   [this.idProps]: data,
-    // }
-    //
-    // this.store.dispatch(addToFavoritesAction({ fav }))
+    console.log('FavoritesComponent', favElement)
+    const fav = {
+      [favElement[0]]: favElement[1],
+    }
+    this.store.dispatch(removeToFavoritesAction({ fav }))
   }
 }

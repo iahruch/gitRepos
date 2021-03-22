@@ -1,18 +1,4 @@
 
-.inner_wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  height: calc(100vh - 64px);
-  overflow: auto;
-  .left, .right {
-    flex: 0 1 50%;
-  }
-  .content {
-    height: 100%;
-
-  }
-}
 .loading {
   height: 70px;
   display: flex;
@@ -30,6 +16,7 @@
     vertical-align: baseline;
   }
 }
+
 
 
 

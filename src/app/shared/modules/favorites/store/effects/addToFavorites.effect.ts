@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core'
 import { Actions, createEffect, ofType } from '@ngrx/effects'
-import { Action } from '@ngrx/store'
 import { PersistFavoritesServices } from '../../services/persistFavorites.services'
 import { addToFavoritesAction, addToFavoritesSuccessAction } from '../actions'
 import { switchMap } from 'rxjs/operators'
 import { of } from 'rxjs'
-import { getReposSuccessAction } from '../../../../../repos/store/actionsRepos'
+import { getReposSuccessAction } from '../../../../../repos/store/actions/actionsRepos'
 
 @Injectable()
 export class AddToFavoritesEffect {
