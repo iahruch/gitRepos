@@ -1,0 +1,37 @@
+.active {
+  color: darkgoldenrod;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.logo {
+  cursor: pointer;
+}
+
+.nav-item {
+  margin: 0 10px ;
+  cursor: pointer;
+  //&:hover {
+  //  color: rgba(255,255,255, 0.5);
+  //}
+}
+
+.fav-count {
+  position: relative;
+  .count {
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    color: aliceblue;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+
+    background-color: darkgoldenrod;
+    border-radius: 50%;
+    font-size: 0.8rem;
+
+  }
+}

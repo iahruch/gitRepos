@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+    <span [routerLink]="['/']" class="logo">
+      <i class="ion-ios-home"></i>
+      Repos
+    </span>
+    <span class="spacer"></span>
+
+    <div [routerLink]="['/']" class="nav-item" routerLinkActive="active">
+      Top Repos
+    </div>
+
+
+    <div class="fav-count nav-item" [routerLink]="['/favorites']" routerLinkActive="active">
+       Favorites Repos
+       <span class="count">{{count}}</span>
+     </div>
+
+
+</mat-toolbar>

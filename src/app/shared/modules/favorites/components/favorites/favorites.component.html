@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4" *ngFor="let fav of favItems" >
+
+      <div class="card">
+        <div class="card-header">
+          <h1>{{fav.fullName}}</h1>
+          <div class="stars">
+            <i class="ion-ios-star"></i>
+            <span>{{fav[1].starsCount}}</span>
+          </div>
+        </div>
+
+        <div class="card-content">
+          <div class="inner">
+            <img [src]="fav[1].ownerPhoto">
+            <div class="nickName">
+              <i class="ion-ios-contact"></i>
+              <span>{{fav[1].fullName | shortNick}}</span>
+          </div>
+          </div>
+          <div class="desc">
+            {{fav[1].descRepo}}
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <button mat-flat-button color="primary" (click)="removeFroFavorites(fav[0])">Remove from favorites</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!--  fullName(pin):"freeCodeCamp/freeCodeCamp"-->
+<!--  ownerPhoto(pin):"https://avatars.githubusercontent.com/u/9892522?v=4"-->
+<!--  starsCount(pin):321865-->
+<!--  descRepo(pin):"freeCodeCamp.org's open source codebase and curriculum. Learn to code for free."-->
+
